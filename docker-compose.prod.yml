@@ -1,0 +1,13 @@
+services:
+  songsapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: songs-app
+    container_name: songs-app
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}

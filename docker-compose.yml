@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: songs
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
