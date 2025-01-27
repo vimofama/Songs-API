@@ -3,10 +3,10 @@ services:
     image: postgres:16
     restart: always
     environment:
-      POSTGRES_PASSWORD: 123456
-      POSTGRES_USER: postgres
-      POSTGRES_DB: songs
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_DB: ${PG_DB}
     ports:
-      - 5432:5432
+      - ${PG_PORT}:${PG_PORT}
     volumes:
       - ./data:/var/lib/postgresql/data
